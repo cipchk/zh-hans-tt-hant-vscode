@@ -1,0 +1,68 @@
+{
+  "name": "zh-hans-tt-hant-vscode",
+  "displayName": "简体与繁体互转",
+  "description": "中文简体与繁体互转，支持台湾地区惯用词汇替换",
+  "version": "1.0.0",
+  "icon": "icon.png",
+  "publisher": "cipchk",
+  "license": "MIT",
+  "licenseUrl": "LICENSE",
+  "homepage": "https://github.com/cipchk/zh-hans-tt-hant-vscode/blob/master/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cipchk/zh-hans-tt-hant-vscode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cipchk/zh-hans-tt-hant-vscode/issues",
+    "email": "cipchk@qq.com"
+  },
+  "engines": {
+    "vscode": "^1.12.0"
+  },
+  "galleryBanner": {
+    "color": "#ffffff",
+    "theme": "light"
+  },
+  "categories": [
+    "Other",
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onCommand:zh-hans-to-zh-hant",
+    "onCommand:zh-hant-to-zh-hans",
+    "onCommand:zh-hans-to-zh-hant-tw",
+    "onCommand:zh-hant-to-zh-hans-tw"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "commands": [{
+        "command": "zh-hans-to-zh-hant",
+        "title": "zh-hans-to-zh-hant（简体转繁体）"
+      },
+      {
+        "command": "zh-hant-to-zh-hans",
+        "title": "zh-hant-to-zh-hans（繁体转简体）"
+      },
+      {
+        "command": "zh-hans-to-zh-hant-tw",
+        "title": "zh-hans-to-zh-hant-tw（简体转繁体-含台湾地区惯用词）"
+      },
+      {
+        "command": "zh-hant-to-zh-hans-tw",
+        "title": "zh-hant-to-zh-hans-tw(繁体转简体-含台湾地区惯用词）"
+      }
+    ]
+  },
+  "scripts": {
+    "prod": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "publish": "run-s prod package",
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.2",
+    "typescript": "^3.1.6",
+    "vscode": "^1.1.21"
+  }
+}
