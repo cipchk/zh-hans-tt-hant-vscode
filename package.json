@@ -35,7 +35,8 @@
   ],
   "main": "./out/src/extension",
   "contributes": {
-    "commands": [{
+    "commands": [
+      {
         "command": "zh-hans-to-zh-hant",
         "title": "zh-hans-to-zh-hant（简体转繁体）"
       },
@@ -51,7 +52,45 @@
         "command": "zh-hant-to-zh-hans-tw",
         "title": "zh-hant-to-zh-hans-tw(繁体转简体-含台湾地区惯用词）"
       }
-    ]
+    ],
+    "menus":{
+      "explorer/context": [
+        {
+          "command": "zh-hans-to-zh-hant",
+          "group": "7_modification"
+        },        
+        {
+          "command": "zh-hant-to-zh-hans",
+          "group": "7_modification"
+        },        
+        {
+          "command": "zh-hans-to-zh-hant-tw",
+          "group": "7_modification"
+        },
+        {
+          "command": "zh-hant-to-zh-hans-tw",
+          "group": "7_modification"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "zh-hans-to-zh-hant",
+          "group": "7_modification"
+        },        
+        {
+          "command": "zh-hant-to-zh-hans",
+          "group": "7_modification"
+        },        
+        {
+          "command": "zh-hans-to-zh-hant-tw",
+          "group": "7_modification"
+        },
+        {
+          "command": "zh-hant-to-zh-hans-tw",
+          "group": "7_modification"
+        }
+      ]
+    }
   },
   "scripts": {
     "prod": "tsc -p ./",

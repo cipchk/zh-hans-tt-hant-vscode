@@ -46,12 +46,11 @@ function process(textEditor: TextEditor, options: TransverterOptions) {
 
 export function activate(context: ExtensionContext) {
   COMMANDS.forEach(item => {
-    context.subscriptions.push(
-      commands.registerTextEditorCommand(item.command, textEditor => {
-        process(textEditor, item.options);
-      }),
-    );
-  });
+    context.subscriptions.push(commands.registerTextEditorCommand(item.command, textEditor => {
+      process(textEditor, item.options)
+    })
+    )
+  })
 }
 
-export function deactivate(): void {}
+export function deactivate(): void { }
